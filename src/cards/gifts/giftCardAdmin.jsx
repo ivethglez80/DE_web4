@@ -1,19 +1,19 @@
+import imgBase from "./../../img/giftBase.png"
 
-const GiftCard = ({ artImg, artName, artDescription, artLink, artStore }) =>{
+
+const GiftCard = ({ id, imagen, nombre_art, descripcion, link, disponible, invitado }) =>{
     return(
         <>
         <div className="border-2 border-red-100">
-            <img src={artImg} alt="artName" className="w-[100px]"/>
-            <h3>{artName || ""}</h3>
-            <p>{artDescription || ""}</p>
-            <a href={artLink || ""} target="_blank">
-                {artLink ? "Se puede conseguir aqui"
+            <img src={imagen ? imagen : imgBase} alt={nombre_art} className="w-[170px]"/>
+            <h3>{nombre_art || ""}</h3>
+            <p>{descripcion || ""}</p>
+            <a href={link || ""} target="_blank">
+                {link ? "Se puede conseguir aqui"
                          : ""}
             </a>
-            <a href={artStore || ""} target="_blank">
-                {artStore ? `disponible en ${artStore}`
-                         : ""}
-            </a>            
+            <p>{disponible ? "disponible" : "Ya fue seleccionado"}</p>         
+            <p>{disponible===false && invitado ? invitado : "---"}</p>
         </div>
         </>
     )    

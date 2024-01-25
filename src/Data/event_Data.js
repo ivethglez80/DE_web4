@@ -17,7 +17,10 @@ const Config = {
     wDir2:"MAS INFORMACION, PAIS",
     wLINK: "https://shorturl.at/gqDLU",
     wppLink: "https://shorturl.at/cfjD3",
-    dressCode: "Elegante"
+    dressCode: "Elegante",
+    banco: "_nombre de banco",
+    alias : "_alias",
+    cbu: "_123456"
 };
 
 export default Config;
