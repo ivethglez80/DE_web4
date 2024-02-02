@@ -1,8 +1,14 @@
 import { useState } from "react";
 import { FaMinusCircle } from "react-icons/fa";
 import { FaCirclePlus } from "react-icons/fa6";
+import AttConfFormToDBTY from "../../components/attConfFormToDBTY";
 
 const ConfirmationFormCard = ({ form, onChangeHandler, onSubmit, onClose, errors }) => {
+
+    const [currentCard, setCurrentCard] = useState(1);
+    const nextCard = () =>{
+        setCurrentCard(currentCard+1);
+    };
 
     const [quantity, setQuantity] = useState(0);
 
@@ -19,12 +25,19 @@ const ConfirmationFormCard = ({ form, onChangeHandler, onSubmit, onClose, errors
         }
     }
 
+    const handleSubmit = (e) => {
+        nextCard();
+        onSubmit();
+    }
+
 
     return (
         <>
         <div className="fixed inset-0 z-50 flex items-center justify-center">
             <div className="absolute inset-0 bg-black bg-opacity-50"></div>
             <div className="relative border-4 border-color1 rounded-xl w-11/12 max-w-2xl bg-white p-4 z-10">
+        {currentCard===1 && (
+            <div>
             <div className="">
                 <input type="text" value={form.nombre} onChange={onChangeHandler} name="nombre" placeholder="Ingresa tu nombre"/>
                 {errors.nombre && <span className="absolute mt-10 text-pink-300">{errors.nombre}</span>}
@@ -56,19 +69,25 @@ const ConfirmationFormCard = ({ form, onChangeHandler, onSubmit, onClose, errors
 
             {quantity === 0 ?
                 <div className="flex justify-center md:justify-end md:pr-10">
-                    <button onClick={onSubmit} className="font-julius text-sm border border-white text-white rounded-3xl py-2 w-5/6 md:w-1/3 ">Finalizar y enviar</button>
+                    <button onClick={handleSubmit} className="font-julius text-sm border border-white text-white rounded-3xl py-2 w-5/6 md:w-1/3 ">Finalizar y enviar</button>
                 </div>
                 :
                 <div className="flex justify-center md:justify-end md:pr-10">
-                    <button onClick={onSubmit} className="font-julius text-sm border rounded-3xl py-2 w-5/6 md:w-1/3 bg-white hover:bg-grisi">{errors.sbmt ? errors.sbmt : "finalizar y enviar"}</button>
+                    <button onClick={handleSubmit} className="font-julius text-sm border rounded-3xl py-2 w-5/6 md:w-1/3 bg-white hover:bg-grisi">{errors.sbmt ? errors.sbmt : "finalizar y enviar"}</button>
 
                 </div>
             }
             {/* <button onClick={onNext} className="font-fuente1 text-sm border rounded-3xl py-2 w-5/6 md:w-1/3 bg-white hover:bg-color1">siguiente</button> */}
             <button onClick={onClose} className="font-fuente1 text-sm underline text-gray-500 hover:text-black">Cerrar</button>
             </div>
+            )}
+            {currentCard ===2 && (
+                <div>                
+                <AttConfFormToDBTY onClose={onClose} />
+                </div>
+            )}
             </div>
-            
+            </div>
         </>
     )
 }

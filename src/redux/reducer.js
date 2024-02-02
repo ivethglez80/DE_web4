@@ -1,4 +1,7 @@
-import { GET_GUESTS, PUT_ASISTE, POST_GUEST, GET_GIFTS, PUT_DISPONIBLE, POST_GIFT } from "./actions";
+import {
+    GET_GUESTS, PUT_ASISTE, POST_GUEST, MODIFY_GUEST,
+    GET_GIFTS, PUT_DISPONIBLE, POST_GIFT, DELETE_GIFT, MODIFY_GIFT
+} from "./actions";
 
 const initialState = {
     guests: [],
@@ -22,6 +25,14 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
             };
+        case MODIFY_GUEST:
+            return {
+                ...state,
+                guests: state.guests.map(guest =>
+                    guest.id === action.payload.id
+                        ? { ...guest, ...action.payload }
+                        : guest)
+            };
 
         case GET_GIFTS:
             return { ...state, gifts: action.payload };
@@ -34,10 +45,27 @@ const rootReducer = (state = initialState, action) => {
                         : gift
                 )
             };
-        case POST_GUEST:
+
+            
+        case POST_GIFT:
             return {
                 ...state,
             };
+        case DELETE_GIFT:
+            return {
+                ...state,
+                gifts: state.gifts.filter(gift => gift.id !== action.payload.id)
+            };
+        case MODIFY_GIFT:
+            return {
+                ...state,
+                gifts: state.gifts.map(gift =>
+                    gift.id === action.payload.id
+                        ? { ...gift, ...action.payload }
+                        : gift)
+            };
+
+
         default:
             return { ...state };
     }

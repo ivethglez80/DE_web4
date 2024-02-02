@@ -1,4 +1,16 @@
-@font-face {
-  font-family: "Kunstler Script";
-  src: url("./fonts/KunstlerScript.ttf");
+/* @font-face {
+  font-family: "fuente1";
+  src: url("./fonts/Lustria-Regular.ttf");
 }
+
+@font-face {
+  font-family: "fuente2";
+  src: url("./fonts/MoonTime-Regular.otf"); 
+  
+}
+
+.btn-silver {
+  @apply bg-gradient-to-r from-slate-300 via-zinc-100 to-gray-300 
+         hover:from-slate-50 hover:to-zinc-400 shadow-lg rounded-full 
+         py-1 w-1/3 font-fuente1 text-color2;
+} */

@@ -2,10 +2,14 @@ import { useState } from "react";
 import ConfirmationFormCard from "../cards/assistance/confirmationFormCard";
 import {postGuest} from "./../redux/actions";
 import { useDispatch } from "react-redux";
+import AttConfFormToDBTY from "./attConfFormToDBTY";
+
 
 const AttConfFormToDB= ({closeForm}) => {
 
     const dispatch = useDispatch();
+
+    
 
     const [form, setForm] = useState({
         nombre: "",
@@ -60,24 +64,23 @@ const AttConfFormToDB= ({closeForm}) => {
         console.log("datos en form", form);
         if (form.nombre && form.cantidad) {            
             dispatch(postGuest(form))
-                .then(res => {                                        
+                .then(res => { 
+                                                     
                     clearForm();
                 })
                 .catch(err => alert(err))            
         } else {
             setErrors({ ...errors, sbmt: "datos incompletos" });
-            clearForm();
-            setTimeout(() => {
-                setErrors({ ...errors, sbmt: "" });
-            }, 2000)
+            clearForm();            
         }
     };
 
     return (
         <>
-       
+    
         <ConfirmationFormCard form={form} onChangeHandler={changeHandler} onSubmit={submitHandler} onClose={closeForm} errors={errors}/>
-        
+    
+    
         </>
     )
 }

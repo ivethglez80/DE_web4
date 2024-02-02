@@ -3,14 +3,20 @@ import axios from "axios";
 export const GET_GUESTS = "GET_GUESTS"
 export const PUT_ASISTE = "PUT_ASISTE"
 export const POST_GUEST = "POST_GUEST"
+export const MODIFY_GUEST = "MODIFY_GUEST"
 
 export const GET_GIFTS = "GET_GIFTS"
 export const PUT_DISPONIBLE = "PUT_DISPONIBLE"
 export const POST_GIFT = "POST_GIFT"
+export const DELETE_GIFT = "DELETE_GIFT"
+export const MODIFY_GIFT = "MODIFY_GIFT"
 
 
 const guestDBUrl = import.meta.env.VITE_GUESTS_LIST || "http://localhost:3001/guestsDB";
+const guestModifyURL = import.meta.env.VITE_GUESTS_MOD || "http://localhost:3001/giftsDB/modify"
 const giftDBUrl = import.meta.env.VITE_GIFTS_LIST || "http://localhost:3001/giftsDB";
+const giftModifyURL = import.meta.env.VITE_GIFTS_MOD || "http://localhost:3001/giftsDB/modify"
+
 //const guestDBUrl = import.meta.env.VITE_BACK_DEPLOY;
 
  
@@ -52,6 +58,20 @@ export const postGuest = (payload) =>{
                 payload: createGuest.data
             }             
             )
+        } catch (error) {
+            console.log(error);
+        }
+    }
+}
+
+export const modifyGuest = (payload) => {
+    return async (dispatch) => {
+        try {
+            let modifiedGuest = await axios.put(guestModifyURL, payload)
+            return dispatch({
+                type: MODIFY_GUEST,
+                payload: modifiedGuest.data
+            })
         } catch (error) {
             console.log(error);
         }
@@ -106,6 +126,35 @@ export const postGift = (payload) =>{
                 payload: createGift.data
             }             
             )
+        } catch (error) {
+            console.log(error);
+        }
+    }
+}
+
+export const deleteGift = (id) => {
+    return async (dispatch) => {
+        try {
+            await axios.delete(giftDBUrl, { data: {id}});
+            dispatch({
+                type: DELETE_GIFT,
+                payload: {id}
+            }
+            )
+        } catch (error) {
+            console.log(error);
+        }
+    }
+}
+
+export const modifyGift = (payload) => {
+    return async (dispatch) =>{
+        try {
+            let modifiedGift = await axios.put(giftModifyURL, payload);
+            return dispatch({
+                type: MODIFY_GIFT,
+                payload: modifiedGift.data
+            })
         } catch (error) {
             console.log(error);
         }
