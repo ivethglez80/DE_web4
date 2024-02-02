@@ -27,7 +27,7 @@ const ConfirmationFormCard = ({ form, onChangeHandler, onSubmit, onClose, errors
 
     const handleSubmit = (e) => {
         nextCard();
-        onSubmit();
+        onSubmit(e);
     }
 
 

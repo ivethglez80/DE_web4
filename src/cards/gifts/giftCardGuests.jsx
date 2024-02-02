@@ -6,6 +6,11 @@ import { useState, useEffect } from "react";
 
 const GiftCard = ({ id, imagen, nombre_art, descripcion, link, disponible }) => {
 
+    const [currentCard, setCurrentCard] = useState(1);
+    const nextCard = () =>{
+        setCurrentCard(currentCard+1);
+    };
+
     const dispatch = useDispatch();
     const [invitado, setInvitado] = useState("");
     const [showConfirma, setShowConfirma] = useState(false);
@@ -15,6 +20,7 @@ const GiftCard = ({ id, imagen, nombre_art, descripcion, link, disponible }) => 
         dispatch(putDisponible(id, disponible, invitado))
         setIsConfirmed(true)
         setInvitado("")
+        nextCard();
     }
 
     useEffect(() => {
@@ -60,11 +66,16 @@ const GiftCard = ({ id, imagen, nombre_art, descripcion, link, disponible }) => 
                     <div className="fixed inset-0 z-50 flex items-center justify-center">
                         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
                         <div className="relative border-0 border-color1 rounded-xl w-11/12 max-w-2xl bg-zinc-100 p-1 z-10">
-                            <p>Al confirmar que usted regala este artículo, será eliminado de la lista para que no sea duplicado por otros invitados.</p>
-                            <p>De manera opcional, ingrese su nombre o grupo familiar:</p>
-                            <input type="text" value={invitado} onChange={handleInvitadoChange} placeholder="Nombre" />
-                            <button onClick={toggleDisponible}>Confirmo mi regalo</button>
-                            {isConfirmed && (
+                            {currentCard===1 &&(                                
+                                <>
+                                <p>Al confirmar que usted regala este artículo, será eliminado de la lista para que no sea duplicado por otros invitados.</p>
+                                <p>De manera opcional, ingrese su nombre o grupo familiar:</p>
+                                <input type="text" value={invitado} onChange={handleInvitadoChange} placeholder="Nombre" />
+                                <button onClick={toggleDisponible}>Confirmo mi regalo</button>
+                                </>
+                                )
+                            }
+                            {currentCard===2 && (
                                 <div >Gracias !! ❤️❤️</div>
                             )}
                             <div>

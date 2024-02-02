@@ -2,14 +2,12 @@ import { useState } from "react";
 import ConfirmationFormCard from "../cards/assistance/confirmationFormCard";
 import {postGuest} from "./../redux/actions";
 import { useDispatch } from "react-redux";
-import AttConfFormToDBTY from "./attConfFormToDBTY";
+
 
 
 const AttConfFormToDB= ({closeForm}) => {
 
-    const dispatch = useDispatch();
-
-    
+    const dispatch = useDispatch();    
 
     const [form, setForm] = useState({
         nombre: "",
