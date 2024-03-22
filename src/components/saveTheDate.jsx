@@ -14,8 +14,8 @@ const SaveTheDate = () => {
         <>
             <div>
                 <a href={eventLink} target="_blank" rel="noopener noreferrer" className="flex justify-center ">
-                    <button className="bg-color1 hover:bg-color2 rounded-full py-2 w-4/6 md:w-2/6 font-fuente1 text-white">
-                        Agendar evento
+                    <button className="bg-color3 hover:bg-color2 rounded-xl py-1 w-4/6 md:w-2/6 font-fuente5 text-white tracking-wider">
+                        Agendar
                     </button>
 
                 </a>

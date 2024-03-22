@@ -1,15 +1,35 @@
-/* @font-face {
+ @font-face {
   font-family: "fuente1";
-  src: url("./fonts/Lustria-Regular.ttf");
+  src: url("./fonts/NymphaTrial-Light.ttf");
 }
 
 @font-face {
   font-family: "fuente2";
-  src: url("./fonts/MoonTime-Regular.otf"); 
+  src: url("./fonts/NymphaTrial-Regular.ttf"); 
   
 }
 
-.btn-silver {
+@font-face {
+  font-family: "fuente3";
+  src: url("./fonts/AbsoluteBold.otf");
+}
+
+@font-face {
+  font-family: "fuente4";
+  src: url("./fonts/Cinzel-Regular.otf");
+}
+
+@font-face {
+  font-family: "fuente5";
+  src: url("./fonts/Montserrat-ExtraLight.otf");
+}
+
+@font-face {
+  font-family: "fuente6";
+  src: url("./fonts/Cinzel-Bold.otf");
+}
+
+/*.btn-silver {
   @apply bg-gradient-to-r from-slate-300 via-zinc-100 to-gray-300 
          hover:from-slate-50 hover:to-zinc-400 shadow-lg rounded-full 
          py-1 w-1/3 font-fuente1 text-color2;

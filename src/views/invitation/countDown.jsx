@@ -45,7 +45,7 @@ const CountDown = () => {
         }
         timerComponents.push(
             <span key={interval}>
-                <span className="border border-white rounded-full p-4">{timeLeft[interval]}</span>
+                <span className="border border-color3 rounded-full p-4">{timeLeft[interval]}</span>
 
             </span>
         );
@@ -54,11 +54,12 @@ const CountDown = () => {
 
     return (
         <>
-            <div className="bg-color1 flex flex-col pt-8 pb-4 md:mt-16 md:px-40 md:pt-16 md:pb-12">
-                <div className=" text-white flex justify-around md:text-3xl">
+            <div className="flex flex-col pt-12 pb-4">
+               
+                <div className=" text-color3 flex justify-around mx-8">
                     {timerComponents.length ? timerComponents : <span>Es el dia de tu boda!</span>}
                 </div>
-                <div className="font-fuente1 text-sm grid grid-cols-4 text-white md:text-xl md:pt-3">
+                <div className="font-fuente4 text-xs grid grid-cols-4 text-color3 mx-8">
                     <div className="pt-4 col-start-1 text-center">Dias</div>
                     <div className="pt-4 col-start-2 text-center">horas</div>
                     <div className="pt-4 col-start-3 text-center">minutos</div>

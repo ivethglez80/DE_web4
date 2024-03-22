@@ -1,8 +1,8 @@
 import Hero from "./hero";
 import CountDown from "./countDown";
 import Fecha_principal from "./fechaPrincipal";
-import PartyPlace from "./partyPlace";
-import DressCode from "./dressCode";
+// import PartyPlace from "./partyPlace";
+// import DressCode from "./dressCode";
 import PhotoCarrousel from "./fotoCarrousel";
 import FocusPhoto from "./focusPhoto";
 import Gift_Section from "./giftSection";
@@ -15,12 +15,12 @@ const Home = () => {
         <>
             <div>
                 <Hero />
+                <FocusPhoto />
                 <CountDown />
                 <Fecha_principal />
-                <PartyPlace />
-                <DressCode />
                 <PhotoCarrousel />
-                <FocusPhoto />
+                {/* <PartyPlace /> */}
+                {/* <DressCode /> */}
                 <Gift_Section />
                 <Attendance />
                 <End />

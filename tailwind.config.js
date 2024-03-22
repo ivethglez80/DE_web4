@@ -7,11 +7,17 @@ export default {
   theme: {
     extend: {
       fontFamily:{
-        fuente1 : ["Kunstler Script", "Sans-serif"],
+        fuente1 : ["fuente1", "Sans-serif"],
+        fuente2 : ["fuente2", "Sans-serif"],
+        fuente3 : ["fuente3", "Sans-serif"],
+        fuente4 : ["fuente4", "sans-serif"],
+        fuente5 : ["fuente5", "sans-serif"],
+        fuente6 : ["fuente6", "sans-serif"],
       },
       colors:{
-        color1: "#3F5134",
-        color2: "#3F6443"
+        color1: "#0F1627",
+        color2: "#C0C0C0",
+        color3: "#365E28",
       },
     }
   },
