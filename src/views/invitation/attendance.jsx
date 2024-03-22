@@ -12,12 +12,12 @@ const Attendance = () => {
 
     return (
         <>
-            <div>
-                This is Attendance
-                <button className="bg-color1 hover:bg-color2 rounded-full py-2 w-4/6 md:w-2/6 font-fuente1 text-white" onClick={toggleForm}>
-            CONFIRMAR ASISTENCIA
-        </button>
-        {showForm && <AttConfFormToDB closeForm = {toggleForm}/>}
+            <div className="w-screen flex justify-center pt-6">
+
+                <button className="bg-color3 hover:bg-color2 rounded-xl py-1 w-4/6 md:w-2/6 font-fuente5 text-white tracking-wider" onClick={toggleForm}>
+                Confirmar
+                </button>
+                {showForm && <AttConfFormToDB closeForm={toggleForm} />}
             </div>
         </>
     )

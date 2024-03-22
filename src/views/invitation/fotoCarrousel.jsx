@@ -8,11 +8,17 @@ const PhotoCarrousel = () => {
     return (
         <>
             <div>
-                <div className="my-12">
+                <div className="my-8">
                     <p className="font-fuente3 text-color3 text-6xl text-center">Nuestro para siempre</p>
                 </div>
-                <div>
-                    <img src="" alt="" />
+                <div className="flex justify-center">
+                    <img src={web3} alt="wedders pic" className="w-11/12 mb-6"/>
+                </div>
+                <div className="flex justify-center">
+                    <img src={web4} alt="wedders pic" className="w-11/12 mb-6"/>
+                </div>
+                <div className="flex justify-center">
+                    <img src={web5} alt="wedders pic" className="w-11/12 mb-6"/>
                 </div>
             </div>
         </>

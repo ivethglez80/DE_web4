@@ -6,7 +6,7 @@ import Fecha_principal from "./fechaPrincipal";
 import PhotoCarrousel from "./fotoCarrousel";
 import FocusPhoto from "./focusPhoto";
 import Gift_Section from "./giftSection";
-import Attendance from "./attendance";
+// import Attendance from "./attendance";
 import End from "./end";
 
 
@@ -19,10 +19,10 @@ const Home = () => {
                 <CountDown />
                 <Fecha_principal />
                 <PhotoCarrousel />
+                <Gift_Section />
+                {/* <Attendance /> */}
                 {/* <PartyPlace /> */}
                 {/* <DressCode /> */}
-                <Gift_Section />
-                <Attendance />
                 <End />
             </div>
         </>
