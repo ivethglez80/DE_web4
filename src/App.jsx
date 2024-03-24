@@ -21,7 +21,7 @@ function App() {
       <Provider store={store}>
         <BrowserRouter>
           <Routes>
-            <Route path="/nuestraBoda-Josi_Agus/" element={<Home />} />
+            <Route path="/nuestraBoda-Josi_Agus" element={<Home />} />
             <Route path="/nuestraBoda-Josi_Agus/lista-de-regalos" element={<ListaRegalos />} />
             <Route path="/nuestraBoda-Josi_Agus/login" element={<Login />} />
 
