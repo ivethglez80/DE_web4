@@ -36,7 +36,7 @@ const CopyTextToClipboard = ({ info, value }) => {
 
     return (
         <button onClick={() => copyToClipboard(value)}
-            className="bg-color1 text-white px-1 rounded-lg text-sm"
+            className="bg-color3 text-white px-3 rounded-lg text-sm opacity-75"
         >
             {
                 toCopy ? `${info} copiado` : `copiar ${info}`
@@ -48,15 +48,15 @@ const CopyTextToClipboard = ({ info, value }) => {
 const BankData = () =>{
     return(
         <>
-         <div className="col-span-1 w-full flex flex-col items-center font-fuente1 py-6">
-                        <p className="font-bold pb-4">Banco: {Config.banco}</p>
+         <div className="col-span-1 w-full flex flex-col items-center font-fuente5 text-color3 py-6">
+                        <p className="font-bold pb-4">BANCO: {Config.banco}</p>
 
                         <div className="flex flex-row pb-4">
                             <p>CBU: {Config.cbu}  <CopyTextToClipboard info="CBU" value={Config.cbu} /> </p>
                         </div>
 
                         <div className="flex flex-row">
-                            <p>Alias: {Config.alias}  <CopyTextToClipboard info="Alias" value={Config.alias} /> </p>
+                            <p>ALIAS: {Config.alias}  <CopyTextToClipboard info="Alias" value={Config.alias} /> </p>
                         </div>
     </div>
         </>
