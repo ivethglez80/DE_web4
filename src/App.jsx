@@ -23,7 +23,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/lista-de-regalos" element={<ListaRegalos />} />
-            <Route path="/nuestraBoda-Josi_Agus/login" element={<Login />} />
+            <Route path="/login" element={<Login />} />
 
 
             <Route path="/admin" element={<PrivateRoute element={DshBrd_main} />} />
