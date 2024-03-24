@@ -23,7 +23,6 @@ const GiftModify = () => {
         id: id,
         nombre_art: selectedGift.nombre_art,
         imagen: selectedGift.imagen,
-        nombre_art: selectedGift.nombre_art,
         descripcion: selectedGift.descripcion,
         link: selectedGift.link,
         disponible: selectedGift.disponible

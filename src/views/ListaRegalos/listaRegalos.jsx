@@ -17,7 +17,8 @@ const ListaRegalos = () => {
     const gifts = useSelector(state=>state.gifts)
     console.log("en listaregalos para invitados:", gifts);
 
-    const availableGifts = gifts.filter(gift => gift.disponible);
+    const availableGifts = gifts ? gifts.filter(gift => gift.disponible) : [];
+
 
     return (
         <>
@@ -38,7 +39,7 @@ const ListaRegalos = () => {
                 </div>
 
                 <div className="md:flex md:flex-row md:flex-wrap md:justify-evenly pl-10 pr-10 pb-10">
-                {availableGifts.map(({ id, imagen, nombre_art, descripcion, link, disponible,invitado }) => {
+                {availableGifts ? availableGifts.map(({ id, imagen, nombre_art, descripcion, link, disponible,invitado }) => {
                 return (
                     <GiftCardGuests
                     key={id}
@@ -50,7 +51,9 @@ const ListaRegalos = () => {
                     disponible={disponible}
                     />
                 )
-            })}  
+            }): (
+                <p>no hay regalos que mostrar</p>
+            )}  
             </div>
                
             </div>

@@ -12,14 +12,20 @@ export const DELETE_GIFT = "DELETE_GIFT"
 export const MODIFY_GIFT = "MODIFY_GIFT"
 
 
-const guestDBUrl = import.meta.env.VITE_GUESTS_LIST || "http://localhost:3001/guestsDB";
-const guestModifyURL = import.meta.env.VITE_GUESTS_MOD || "http://localhost:3001/giftsDB/modify"
-const giftDBUrl = import.meta.env.VITE_GIFTS_LIST || "http://localhost:3001/giftsDB";
-const giftModifyURL = import.meta.env.VITE_GIFTS_MOD || "http://localhost:3001/giftsDB/modify"
+// const guestDBUrl = import.meta.env.VITE_GUESTS_LIST || "http://localhost:3001/guestsDB";
+// const guestModifyURL = import.meta.env.VITE_GUESTS_MOD || "http://localhost:3001/guestsDB/modify"
+// const giftDBUrl = import.meta.env.VITE_GIFTS_LIST || "http://localhost:3001/giftsDB";
+// const giftModifyURL = import.meta.env.VITE_GIFTS_MOD || "http://localhost:3001/giftsDB/modify"
 
-//const guestDBUrl = import.meta.env.VITE_BACK_DEPLOY;
 
- 
+const guestDBUrl = import.meta.env.VITE_guestDBUrl_DEPLOY;
+const guestModifyURL = import.meta.env.VITE_guestModifyURL_DEPLOY;
+const giftDBUrl = import.meta.env.VITE_giftDBUrl_DEPLOY;
+const giftModifyURL = import.meta.env.VITE_giftModifyURL_DEPLOY;
+
+console.log("este es guestDBURL:", guestDBUrl); 
+console.log("este es giftDBUrl:", giftDBUrl);
+
 export const getGuests = () => {
     return async function (dispatch) {
         try {
