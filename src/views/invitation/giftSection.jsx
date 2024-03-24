@@ -15,7 +15,7 @@ const Gift_Section = () => {
 
     return (
         <>
-        <div className="border border-color3 rounded-t-[65px] pb-32 pt-12">
+        <div className="border border-color3 rounded-t-[65px] pb-32 pt-12 mx-2">
 
             <div className="flex justify-center py-4 ">
                 <img src={gift} alt="gift icon" className="w-[60px]" />

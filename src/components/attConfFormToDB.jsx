@@ -1,13 +1,25 @@
 import { useState } from "react";
-import ConfirmationFormCard from "../cards/assistance/confirmationFormCard";
-import {postGuest} from "./../redux/actions";
+import axios from "axios";
+import SaveTheDate from "../components/saveTheDate";
+import CardOne from "../cards/confirmationformCards/cardOne";
+import CardTwo from "../cards/confirmationformCards/cardTwo";
+import CardTwoT from "../cards/confirmationformCards/cardTwoT";
+import CardTwoM from "../cards/confirmationformCards/cardTwoM";
+import CardThree from "../cards/confirmationformCards/cardThree";
+import { postGuest } from "../redux/actions";
 import { useDispatch } from "react-redux";
 
+const AttConfFormToDB = ({closeForm}) => {
 
+    const dispatch = useDispatch();
 
-const AttConfFormToDB= ({closeForm}) => {
-
-    const dispatch = useDispatch();    
+    const [currentCard, setCurrentCard] = useState(1);
+    const nextCard = () =>{
+        setCurrentCard(currentCard+1);
+    };
+    const prevCard = () =>{
+        setCurrentCard(currentCard-1);
+    };
 
     const [form, setForm] = useState({
         nombre: "",
@@ -60,27 +72,65 @@ const AttConfFormToDB= ({closeForm}) => {
     const submitHandler = (event) => {
         event.preventDefault();
         console.log("datos en form", form);
-        if (form.nombre && form.cantidad) {            
+        if (form.nombre && form.cantidad) {
+            // const response = axios.post(postGuestUrl, form)
             dispatch(postGuest(form))
-                .then(res => { 
-                                                     
+                .then(res => {
+                    
+                    nextCard();
                     clearForm();
                 })
                 .catch(err => alert(err))            
         } else {
             setErrors({ ...errors, sbmt: "datos incompletos" });
-            clearForm();            
+            clearForm();
+            setTimeout(() => {
+                setErrors({ ...errors, sbmt: "" });
+            }, 2000)
         }
     };
 
+
+
     return (
         <>
-    
-        <ConfirmationFormCard form={form} onChangeHandler={changeHandler} onSubmit={submitHandler} onClose={closeForm} errors={errors}/>
-    
-    
+            <div className="fixed inset-0 z-50 flex items-center justify-center">
+            <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+            <div className="relative rounded-3xl w-11/12 max-w-2xl bg-white z-10">
+            {/* <div className="flex justify-end">
+                <button onClick={closeForm} className="bg-musgo text-white px-3 rounded-lg">X</button>
+            </div> */}
+<div>
+        {currentCard===1 && (
+            <CardOne form={form} onChangeHandler={changeHandler} onNext={nextCard} onPrev={prevCard} onClose={closeForm} errors={errors}/>
+        )}
+        {currentCard===2 && (
+            <CardTwoT form={form} onChangeHandler={changeHandler} onSubmit={submitHandler} onNext={nextCard} onPrev={prevCard} errors={errors}/>
+        )}
+        {currentCard===3 && (
+            <CardTwoM form={form} onChangeHandler={changeHandler} onSubmit={submitHandler} onNext={nextCard} onPrev={prevCard} errors={errors}/>
+        )}
+         {currentCard===4 && (
+            <CardTwo form={form} onChangeHandler={changeHandler} onSubmit={submitHandler} onNext={nextCard} onPrev={prevCard} errors={errors}/>
+        )}
+        {currentCard===5 && (
+            <CardThree onClose={closeForm}/>
+        )}
+        </div>                 
+                </div>
+            </div>
         </>
     )
 }
 
 export default AttConfFormToDB;
+
+
+
+
+
+
+
+
+
+
