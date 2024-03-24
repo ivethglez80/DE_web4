@@ -7,9 +7,7 @@ const GuestDetail = ({ id, nombre, apellido, telefono, email, cantidad, asiste, 
                 <div className="absolute inset-0 bg-black bg-opacity-50"></div>
                 <div className="relative border-0 border-color1 rounded-xl w-11/12 max-w-2xl bg-white p-1 z-10">
 
-            <button onClick={closeDetail}>
-                cerrar
-            </button>
+         
 
             <div className="">
 
@@ -18,14 +16,14 @@ const GuestDetail = ({ id, nombre, apellido, telefono, email, cantidad, asiste, 
                     <h2>{apellido ? apellido : "apellido"}</h2>
                 </div>
 
-                <div className="flex justify-center gap-5 mb-3">
+                {/* <div className="flex justify-center gap-5 mb-3">
                     <div>
                         <a href={`mailto:${email}`}><p>Email: {email}</p></a>
                     </div>
                     <div>
                         <a href={`https://api.whatsapp.com/send?phone=${telefono}&text=Hola!`} target="_blank"><p>Telefono: {telefono}</p></a>
                     </div>
-                </div>
+                </div> */}
 
                 <div className="flex justify-center mb-3">
                     <p>Grupo familiar: {cantidad}</p>
@@ -42,12 +40,12 @@ const GuestDetail = ({ id, nombre, apellido, telefono, email, cantidad, asiste, 
                         )}
 
             </div>
-            <div className=" flex justify-evenly">
-                        <div className="">
+            <div className=" flex justify-evenly pt-6">
+                        <div className="underline">
                             <Link to={`/guestmodify/${id}`} className="btn-silver py-2">&nbsp; Modificar &nbsp;</Link>
                         </div>
                         <div className="">
-                            <button onClick={closeDetail} className="btn-silver w-[90px]">
+                            <button onClick={closeDetail} className="underline">
                                 cerrar
                             </button>
                         </div>

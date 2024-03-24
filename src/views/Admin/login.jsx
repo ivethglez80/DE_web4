@@ -25,21 +25,21 @@ const Login = () => {
 
     return (
         <>
-        <div className="flex justify-center pt-40">
+        <div className="flex justify-center py-40">
         <div className="flex flex-col">
             <div className="pb-6">
-                <h1 className="font-fuente1 text-color1 text-2xl uppercase text-center">Ingresar a <br/> panel de control</h1>
+                <h1 className="font-fuente4 text-color1 text-2xl uppercase text-center">Ingresar a <br/> panel de control</h1>
             </div>
             <div className="mb-6">                
-            <p className="font-fuente1 text-color1 text-xl ">userName</p>
-            <input type="text" value={userName} onChange={(e)=> setUserName(e.target.value)} className="bg-color3 font-fuente1 text-color2 text-2xl"/>
+            <p className="font-fuente4 text-color1 text-xl ">userName</p>
+            <input type="text" value={userName} onChange={(e)=> setUserName(e.target.value)} className="bg-color3 font-fuente5 text-color2 text-2xl rounded-xl pl-4"/>
             </div>
             <div>                
-            <p className="font-fuente1 text-color1 text-xl ">Password</p>
-            <input type="text" value={password} onChange={(e)=> setPassword(e.target.value)} className="bg-color3 font-fuente1 text-color2 text-2xl"/>
+            <p className="font-fuente4 text-color1 text-xl ">Password</p>
+            <input type="text" value={password} onChange={(e)=> setPassword(e.target.value)} className="bg-color3 font-fuente5 text-color2 text-2xl rounded-xl pl-4"/>
             </div>
             <div className="flex justify-center">
-            <button onClick={handleLogin} className="btn-silver w-[100px] mt-8">Login</button>
+            <button onClick={handleLogin} className="btn-silver w-[100px] mt-8 border-2 border-color3 rounded-full p-2">Login</button>
             </div>
         </div>
         </div>

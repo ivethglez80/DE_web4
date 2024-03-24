@@ -25,18 +25,18 @@ const Card = ({ id, nombre, apellido, telefono, email, cantidad, asiste }) => {
 
     return (
         <>
-            <div className="flex flex-row gap-1 bg-[#9BBF85] my-1">
-                <div className="w-1/5 flex justify-center bg-white hover:bg-gray-400">
+            <div className="flex flex-row gap-1 bg-[#8597bf] my-2">
+                <div className="w-1/5 flex justify-center bg-white py-2 hover:bg-gray-400">
                     <span>{cantidad}</span>
                 </div>
 
-                <div className="w-3/5 bg-white hover:bg-gray-400 pl-2" onClick={toggleDetail}>
+                <div className="w-3/5 bg-white hover:bg-gray-400 pl-2 flex items-center" onClick={toggleDetail}>
                     <span>{nombre}</span>
                 </div>
 
                 <div className="w-1/5 bg-white hover:bg-gray-400 flex justify-center">
                     <button onClick={toggleAsiste}>
-                        {asiste ? <FaCheckCircle className="text-xl text-color1" /> : <FaCircleXmark className="text-xl text-color1" />}
+                        {asiste ? <FaCheckCircle className="text-xl text-[#667494]" /> : <FaCircleXmark className="text-xl text-[#667494]" />}
                     </button>
                 </div>                
             </div>

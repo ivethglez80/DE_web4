@@ -3,6 +3,7 @@ import GuestTable from "./guestsTable";
 import GiftsTable from "./giftsTable";
 import CreateGiftCard from "../../cards/gifts/createGiftCard";
 import { useNavigate } from "react-router-dom";
+import ring from "./../../img/ring.png";
 
 
 const DshBrd_Main = () => {
@@ -38,31 +39,36 @@ const DshBrd_Main = () => {
 
     return (
         <>
-            <div>
-                This is DshBrd_Main
-
-                <ul>
-                    <li onClick={handleGuestsTable}>
-                        Lista invitados
-                    </li>
-                    <li onClick={handleGiftsTable}>
-                        Lista regalos
-                    </li>
-                    <li onClick={handleCreateGift}>
-                        Ingresar nuevo regalo
-                    </li>
-                    <div>
-                        <button onClick={handleLogOut} className="underline text-base pl-5 pr-2">Cerrar <br /> Sesion</button>
-                    </div>
-                </ul>
-
-                <div>
-                    {guestsTable ? <GuestTable /> : ""}
-                    {giftsTable ? <GiftsTable /> : ""}
-                    {newgiftCard ? <CreateGiftCard /> : ""}
-                </div>
+        <div className=" text-icons">
+            <div className="flex flex-row justify-between items-center gap-6 pl-6 pt-2 border-b border-b-color3 pb-2">
+            <img src={ring} alt="anillos png" className="h-[40px]"/>
+            <p className="font-fuente4 text-color1 text-base">Tablero de control</p>
+            <button onClick={handleLogOut} className="underline pl-5 pr-2 text-xs">Cerrar <br /> Sesion</button>
             </div>
-        </>
+            
+
+            <ul className="flex flex-row justify-between pb-4 p-4 underline border-b border-b-color3 text-sm">
+                <li onClick={handleGuestsTable}>
+                    Lista invitados
+                </li>
+                <li onClick={handleGiftsTable}>
+                    Lista regalos
+                </li>
+                <li onClick={handleCreateGift}>
+                    Ingresar nuevo regalo
+                </li>
+                <div>
+                   
+                </div>
+            </ul>
+
+            <div>
+                {guestsTable ? <GuestTable /> : ""}
+                {giftsTable ? <GiftsTable /> : ""}
+                {newgiftCard ? <CreateGiftCard /> : ""}
+            </div>
+        </div>
+    </>
     )
 }
 

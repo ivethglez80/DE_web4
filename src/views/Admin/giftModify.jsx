@@ -116,15 +116,15 @@ const GiftModify = () => {
 
             </div>
 
-            <div className="font-fuente1 text-color2 pt-24 pr-16">
-                <p className="text-xl text-center ">Volver a Panel de administracion: </p>
+            <div className="pt-4 pr-16">
+                
                 <div className="flex justify-end">
-                    <Link to="/admin" className="btn-silver pl-10">volver</Link>
+                    <Link to="/admin" className="border-2 border-color3 px-4 rounded-xl text-color3">volver</Link>
                 </div>
             </div>
 
             <div className="text-center pt-12">
-                <h1 className="font-fuente1 text-color2 text-xl uppercase">Modificar Regalo:</h1>
+                <h1 className="font-fuente6 text-color3 text-xl uppercase">Modificar Regalo:</h1>
             </div>
 
 
@@ -155,30 +155,30 @@ const GiftModify = () => {
                             <input type="file" accept="image/*" onChange={selectImage} name="imagen" className="border border-color3 py-2 shadow-lg" />
                         </div>
 
-                        <button onClick={handleImgUpload} className="btn-silver w-[150px]">Ver y Confirmar nueva imagen</button>
+                        <button onClick={handleImgUpload} className="underline py-4">Confirmar nueva imagen</button>
                     </div>
                 </div>
                 <div className=" mt-4"> {/*inputs texts */}
                     <div className="flex justify-center">
                         <input type="text" value={form.nombre_art} onChange={changeHandler} name="nombre_art" placeholder={form.nombre_art}
-                            className="bg-color3 text-color2 font-fuente1 text-xl mb-4 py-2 pl-2 rounded-xl md:w-[300px]" />
+                            className="bg-color3 text-white font-fuente5 text-xl mb-4 py-2 pl-2 rounded-xl md:w-[300px]" />
                     </div>
                     <div className="flex justify-center">
                         <input type="text" value={form.descripcion} onChange={changeHandler} name="descripcion" placeholder="Descripcion"
-                            className="bg-color3 text-color2 font-fuente1 text-xl mb-4 py-2 pl-2 rounded-xl md:w-[300px]" />
+                            className="bg-color3 text-white font-fuente5 text-xl mb-4 py-2 pl-2 rounded-xl md:w-[300px]" />
                     </div>
                     <div className="flex justify-center">
                         <input type="text" value={form.link} onChange={changeHandler} name="link" placeholder="Link para obtenerlo"
-                            className="bg-color3 text-color2 font-fuente1 text-xl mb-4 py-2 pl-2 rounded-xl md:w-[300px]" />
+                            className="bg-color3 text-white font-fuente5 text-xl mb-4 py-2 pl-2 rounded-xl md:w-[300px]" />
                     </div>
                 </div>
             </div>
             <div>
             </div>
-            <div className="flex justify-center pt-4">
-                <button onClick={submitHandler} className="btn-silver p-2 w-[150px]">Finalizar y enviar</button>
+            <div className="flex justify-center pt-4 mb-16">
+                <button onClick={submitHandler} className="border-2 border-color3 rounded-2xl p-2 w-[150px]">Finalizar y enviar</button>
             </div>
-            <Footer />
+            
         </>
     )
 }

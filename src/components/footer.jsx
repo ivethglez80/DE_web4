@@ -1,7 +1,7 @@
 const Footer = () => {
     return (
         <>
-            <div className="mb-8 bg-[#E8E8E8]">
+            <div className="py-8 bg-[#E8E8E8]">
                 <div className="flex justify-between">
                     {['A', 'L', 'L', ' ', 'R', 'I', 'G', 'H', 'T', 'S', ' ', 'R', 'E', 'S', 'E', 'R', 'V', 'E', 'D'].map((letter, index) => (
                         <span key={index} className="font-fuente1 text-[#1A1C19] text-2xl opacity-25">

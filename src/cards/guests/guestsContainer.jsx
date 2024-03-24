@@ -28,34 +28,11 @@ const GuestCardsContainer = () => {
     return (
         <>
             {/* <pre>{JSON.stringify(guests, null, 2)}</pre> */}
-            <div className="bg-gradient-to-b from-[#3F5134] from-10% via-[#3F5134] via-50% to-[#9FC589] h-screen">
+            <div className="bg-gradient-to-b from-[#345151] from-10% via-[#345051] via-50% to-[#89c5bb] h-full pb-12">
+               
                 <div>
-
-                    <div className="relative">
-                        
-                        
-
-                        <div className="absolute top-7 left-2 flex flex-row mx-auto text-white md:left-20">
-                           
-
-                           
-                            <div className="flex items-baseline">
-                                <h1 className=" text-xl md:text-6xl">{Config.novia}</h1>
-                                <h1 className=" text-xl md:text-6xl">{Config.novio}</h1>
-                            </div>
-                        </div>
-                        <div className=" text-white text-base md:top-28 md:left-32 md:text-2xl">
-                            <p>
-                                Boda lista
-                            </p>
-                        </div>
-                    </div>
-
-
-                </div>
-                <div>
-                <div className="w-5/6 mx-auto">
-                    <div className="flex flex-row text-rose-200">
+                <div className="w-5/6 mx-auto pt-6">
+                    <div className="flex flex-row text-white">
                         <div className="w-1/5 flex justify-center">
                             <p>Cant</p>
                         </div>

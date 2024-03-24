@@ -16,21 +16,26 @@ const GiftsTable = () => {
 
     return (
         <>
-            this is the Gifts Table
-            {gifts.map(({ id, imagen, nombre_art, descripcion, link, disponible, invitado }) => {
-                return (
-                    <GiftCardAdmin
-                        id={id}
-                        imagen={imagen}
-                        nombre_art={nombre_art}
-                        descripcion={descripcion}
-                        link={link}
-                        disponible={disponible}
-                        invitado = {invitado}
-                    />
+        <div className="h-full">
+        <p className="font-fuente4 text-icons pl-4 tracking-widest pb-1 pt-0 text-xl text-center">Lista de regalos</p>
+        <div className="pb-20 ">                
+        {gifts.map(({ id, imagen, nombre_art, descripcion, link, disponible, invitado }) => {
+            return (
+                <GiftCardAdmin
+                key={id}
+                id={id}
+                imagen={imagen}
+                nombre_art={nombre_art}
+                descripcion={descripcion}
+                link={link}
+                disponible={disponible}
+                invitado = {invitado}
+                />
                 )
             })}  
-        </>
+        </div>
+        </div>
+    </>
     )
 }
 

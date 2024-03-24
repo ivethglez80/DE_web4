@@ -88,49 +88,49 @@ const GuestModify = () => {
                 
             </div>
 
-            <div className="font-fuente1 text-color2 pt-24 pr-16">
-                <p className="text-xl text-center ">Volver a Panel de administracion: </p>
+            <div className="pt-4 pr-16">
+                
                 <div className="flex justify-end">
-                    <Link to="/admin" className="btn-silver pl-10">volver</Link>
+                    <Link to="/admin" className="border-2 border-color1 px-4 rounded-xl text-color1">volver</Link>
                 </div>
             </div>
 
             <div className="text-center pt-20">
-                <h1 className="font-fuente1 text-color2 text-xl uppercase">Modificar datos de invitado:</h1>
+                <h1 className="font-fuente6 text-color1 text-base uppercase">Modificar datos de invitado:</h1>
             </div>
 
             <div className="pt-10 w-3/4 mx-auto"> {/*  formulario */}
 
-                <div className="pl-4">
+                <div className="flex justify-center">
                     <input
                         type="text"
                         value={form.nombre}
                         onChange={changeHandler}
                         name="nombre"
                         placeholder="Nombre"
-                        className="bg-neutral-200 rounded-md text-2xl text-color2 font-fuente1 pl-4 border border-stone-300 hover:border-stone-300 focus:outline-none focus:border-zinc-300 focus:ring focus:ring-zinc-300 mb-2 " />
+                        className="bg-neutral-200 rounded-md text-2xl pl-4 300 hover:border-stone-300 focus:outline-none focus:border-zinc-300 focus:ring focus:ring-zinc-300 mb-2 " />
                 </div>
 
-                <div className="pl-4">
+                <div className="flex justify-center">
                     <input type="text" value={form.apellido} onChange={changeHandler} name="apellido" placeholder="Apellido"
-                        className="bg-neutral-200 rounded-md text-2xl text-color2 font-fuente1 pl-4 border border-stone-300 hover:border-stone-300 focus:outline-none focus:border-zinc-300 focus:ring focus:ring-zinc-300 mb-2 " />
+                        className="bg-neutral-200 rounded-md text-2xl pl-4 border border-stone-300 hover:border-stone-300 focus:outline-none focus:border-zinc-300 focus:ring focus:ring-zinc-300 mb-2 " />
 
                 </div>
 
-                <div className="pl-4">
+                <div className="flex justify-center">
                     <input type="text" value={form.telefono} onChange={changeHandler} name="telefono" placeholder="Telefono"
-                        className="bg-neutral-200 rounded-md text-2xl text-color2 font-fuente1 pl-4 border border-stone-300 hover:border-stone-300 focus:outline-none focus:border-zinc-300 focus:ring focus:ring-zinc-300 mb-2 " />
+                        className="bg-neutral-200 rounded-md text-2xl pl-4 border border-stone-300 hover:border-stone-300 focus:outline-none focus:border-zinc-300 focus:ring focus:ring-zinc-300 mb-2 " />
 
                 </div>
 
-                <div className="pl-4">
+                <div className="flex justify-center">
                     <input type="text" value={form.email} onChange={changeHandler} name="email" placeholder="E-mail"
-                        className="bg-neutral-200 rounded-md text-2xl text-color2 font-fuente1 pl-4 border border-stone-300 hover:border-stone-300 focus:outline-none focus:border-zinc-300 focus:ring focus:ring-zinc-300 mb-2 " />
+                        className="bg-neutral-200 rounded-md text-2xl pl-4 border border-stone-300 hover:border-stone-300 focus:outline-none focus:border-zinc-300 focus:ring focus:ring-zinc-300 mb-2 " />
 
                 </div>
 
                 <div className="flex flex-row items-center pb-6 px-4">
-                    <p className="font-fuente1 text-color2 text-base ">Cantidad de personas que confirma en su grupo:</p>
+                    <p className="text-color1">Cantidad de personas que confirma:</p>
                     <div className="flex flex-row justify-center z-[70] pr-6">
                         <FaMinusCircle onClick={decreaseQty} className="cursor-pointer text-color1 hover:text-color2 text-4xl mr-2" />
                         <span className="mx-2 font-fuente1 text-3xl">{quantity}</span>
@@ -141,16 +141,16 @@ const GuestModify = () => {
 
                 {quantity === 0 ?
                     <div className="flex justify-center md:justify-end md:pr-10 pb-6">
-                        <button onClick={submitHandler} className="btn-silver w-[150px] ">Finalizar y enviar</button>
+                        <button onClick={submitHandler} className="border-2 border-color1 rounded-2xl p-2 w-[150px]">Finalizar y enviar</button>
                     </div>
                     :
-                    <div className="flex justify-center md:justify-end md:pr-10 pb-6">
-                        <button onClick={submitHandler} className="btn-silver w-[150px]">{errors.sbmt ? errors.sbmt : "finalizar y enviar"}</button>
+                    <div className="flex justify-center md:justify-end md:pr-10 pb-24">
+                        <button onClick={submitHandler} className="border-2 border-color1 rounded-2xl p-2 w-[150px]">{errors.sbmt ? errors.sbmt : "finalizar y enviar"}</button>
                     </div>
                 }
 
             </div>
-            <Footer />
+            
         </>
     )
 }
