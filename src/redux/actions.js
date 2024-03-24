@@ -18,10 +18,10 @@ export const MODIFY_GIFT = "MODIFY_GIFT"
 // const giftModifyURL = import.meta.env.VITE_GIFTS_MOD || "http://localhost:3001/giftsDB/modify"
 
 
-const guestDBUrl = import.meta.env.VITE_guestDBUrl_DEPLOY;
-const guestModifyURL = import.meta.env.VITE_guestModifyURL_DEPLOY;
-const giftDBUrl = import.meta.env.VITE_giftDBUrl_DEPLOY;
-const giftModifyURL = import.meta.env.VITE_giftModifyURL_DEPLOY;
+const guestDBUrl = import.meta.env.VITE_GUESTS_LIST_DEPLOY;
+const guestModifyURL = import.meta.env.VITE_GUESTS_MOD_DEPLOY;
+const giftDBUrl = import.meta.env.VITE_GIFTS_LIST_DEPLOY;
+const giftModifyURL = import.meta.env.VITE_GIFTS_MOD_DEPLOY;
 
 console.log("este es guestDBURL:", guestDBUrl); 
 console.log("este es giftDBUrl:", giftDBUrl);
@@ -98,7 +98,7 @@ export const getGifts = () => {
         try {
             const apiData = await axios.get(giftDBUrl);
             const gifts = apiData.data;
-            console.log(gifts);
+            console.log("gifts son estos",gifts);
             dispatch({ type: GET_GIFTS, payload: gifts });
         } catch (error) {
             console.error(error);

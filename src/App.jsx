@@ -21,14 +21,14 @@ function App() {
       <Provider store={store}>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/lista-de-regalos" element={<ListaRegalos />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/nuestraBoda-Josi_Agus/" element={<Home />} />
+            <Route path="/nuestraBoda-Josi_Agus/lista-de-regalos" element={<ListaRegalos />} />
+            <Route path="/nuestraBoda-Josi_Agus/login" element={<Login />} />
 
 
-            <Route path="/admin" element={<PrivateRoute element={DshBrd_main} />} />
-            <Route path="/giftmodify/:id" element={<PrivateRoute element={GiftModify} />} />
-            <Route path="/guestmodify/:id" element={<PrivateRoute element={GuestModify} />} />
+            <Route path="/nuestraBoda-Josi_Agus/admin" element={<PrivateRoute element={DshBrd_main} />} />
+            <Route path="/nuestraBoda-Josi_Agus/giftmodify/:id" element={<PrivateRoute element={GiftModify} />} />
+            <Route path="/nuestraBoda-Josi_Agus/guestmodify/:id" element={<PrivateRoute element={GuestModify} />} />
           </Routes>
         </BrowserRouter>
         <Footer />

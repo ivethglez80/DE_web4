@@ -3,6 +3,7 @@ import axios, { formToJSON } from "axios";
 import { useDispatch } from "react-redux";
 import { postGift } from "./../../redux/actions";
 import imgBase from "./../../img/giftBase.png";
+import imageCompressor from 'compressorjs';
 
 
 const CreateGiftCard = () => {
@@ -52,25 +53,39 @@ const CreateGiftCard = () => {
 
     const handleImgUpload = async () => {
         if (imgFile) {
-            console.log("esta es imgfile", imgFile);
+            console.log("Esta es imgFile", imgFile);
             try {
-                const formData = new FormData();
-                formData.append("key", imgbbApiKey);
-                formData.append("image", imgFile);
-                
-                console.log("imgbbUploadUrl:", imgbbUploadUrl);
-                formData.forEach((value, key) => {
-                    console.log(`${key}: ${value}`);
+                new imageCompressor(imgFile, {
+                    quality: 0.6, // ajusta la calidad de la imagen comprimida
+                    success(result) {
+                        const formData = new FormData();
+                        formData.append("key", imgbbApiKey);
+                        formData.append("image", result);
+    
+                        console.log("imgbbUploadUrl:", imgbbUploadUrl);
+                        formData.forEach((value, key) => {
+                            console.log(`${key}: ${value}`);
+                        });
+    
+                        axios.post(imgbbUploadUrl, formData)
+                            .then(response => {
+                                console.log("Tipo de imagen", typeof(response.data.data.url));
+                                setForm({ ...form, imagen: response.data.data.url });
+                                URL.revokeObjectURL(imgUrl);
+                                alert("La imagen ha sido cargada con éxito");
+                                // Llamada a la función de envío después de cargar la imagen
+                            })
+                            .catch(error => {
+                                console.error("Error al subir la imagen a imgbb:", error);
+                                // Manejo adecuado del error
+                            });
+                    },
+                    error(error) {
+                        console.log('Error comprimiendo la imagen:', error.message);
+                    },
                 });
-                
-                const response = await axios.post(imgbbUploadUrl, formData);
-                console.log("tipo de imagen", typeof(response.data.data.url));
-                setForm({ ...form, imagen: response.data.data.url });
-                URL.revokeObjectURL(imgUrl);
-                alert("la imagen ha sido cargada con exito")
-                 // Llamada a la función de envío después de cargar la imagen
             } catch (error) {
-                console.error("error al subir la imagen a imgbb:", error);
+                console.error("Error al comprimir la imagen:", error);
                 // Manejo adecuado del error
             }
         }
@@ -137,7 +152,7 @@ const CreateGiftCard = () => {
                             <input type="file" accept="image/*" onChange={selectImage} name="imagen" />
                         </div>
                         <div className="flex justify-center md:w-[300px]">
-                            <button onClick={handleImgUpload} className="py-4 underline text-sm px-16 md:text-xs">importante: click aqui para aceptar y guardar Imagen</button>
+                            <button onClick={handleImgUpload} className="py-4 underline text-sm px-16 md:text-xs">IMPORTANTE: click aqui para aceptar y guardar Imagen, <br/> Esperar mensaje de confirmacion de carga para continuar</button>
                         </div>
                     </div>
                 </div>
