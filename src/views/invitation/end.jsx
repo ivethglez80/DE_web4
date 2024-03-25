@@ -17,7 +17,7 @@ const End = () => {
 
                 <div className="pt-6">
                     <p className="font-fuente3 text-7xl text-center">¡Te esperamos!</p>
-                    <h1 className="font-fuente3 text-5xl text-center">Antonio y Paula</h1>
+                    <h1 className="font-fuente3 text-5xl text-center">{Config.novio} y {Config.novia}</h1>
                     
                 </div>
                 </Slide>
