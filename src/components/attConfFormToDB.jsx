@@ -25,7 +25,7 @@ const AttConfFormToDB = ({closeForm}) => {
         nombre: "",
         apellido: "",
         telefono: "",
-        email: "",
+        email: "1",
         cantidad: "",
     });
 
@@ -62,7 +62,7 @@ const AttConfFormToDB = ({closeForm}) => {
             nombre: "",
             apellido: "",
             telefono: "",
-            email: "",
+            email: "1",
             cantidad: "",
         });
     };
