@@ -3,6 +3,9 @@ import Config from "../../Data/event_Data";
 import month from "./../../img/month.svg";
 import PartyPlace from "./partyPlace";
 import place from "./../../img/place.svg";
+import { Zoom } from "react-awesome-reveal";
+
+
 
 
 const Fecha_principal = () => {
@@ -13,6 +16,7 @@ const Fecha_principal = () => {
     return (
         <>
             <div className="border border-color3 rounded-[65px] mx-2 mt-16 pt-24 pb-24">
+                <Zoom delay={100}>
 
                 <div className="flex justify-center pb-4">
                     <img src={month} alt="icono calendario" className="w-[60px]"/>
@@ -44,7 +48,7 @@ const Fecha_principal = () => {
                     </button>
                 </a>
                 </div>
-
+                </Zoom>
             </div>
         </>
     )

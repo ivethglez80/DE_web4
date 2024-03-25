@@ -3,6 +3,10 @@ import GiftOptionsCard from "../../cards/gifts/giftOptionsCard";
 import gift from "./../../img/gift.svg";
 import phone from "./../../img/phone.svg";
 import Attendance from "./attendance";
+import { Zoom } from "react-awesome-reveal";
+
+
+
 
 
 const Gift_Section = () => {
@@ -16,13 +20,14 @@ const Gift_Section = () => {
     return (
         <>
         <div className="border border-color3 rounded-t-[65px] pb-32 pt-12 mx-2">
-
+            <Zoom>
             <div className="flex justify-center py-4 ">
                 <img src={gift} alt="gift icon" className="w-[60px]" />
             </div>
             <div>
                 <h2 className="font-fuente3 text-color3 text-7xl text-center">Regalos</h2>
             </div>
+            </Zoom>
             <div className="mx-10 text-center pt-2">
                 <span className="font-fuente4 text-color3 text-base text-center">
                 Tu presencia es nuestro mejor regalo, pero &nbsp;                
@@ -41,12 +46,14 @@ const Gift_Section = () => {
                 {showCard && <GiftOptionsCard closeCard={toggleCard} />}
             </div>
 
+            <Zoom delay={200}>
             <div className="flex justify-center pt-24">
                 <img src={phone} alt="icon phone" className="w-[60px]"/>
             </div>
             <div>
                 <h2 className="font-fuente3 text-color3 text-7xl text-center">Confirmación</h2>
             </div>
+            </Zoom>
             <div className="mx-12 text-center pt-2">
                 <span className="font-fuente4 text-color3 text-base text-center">
                 Estamos muy contentos de que puedas asistir. Es muy importante &nbsp;                

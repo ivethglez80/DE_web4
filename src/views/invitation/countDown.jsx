@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Config from "./../../Data/event_Data";
+import { Zoom } from "react-awesome-reveal";
+
+
+
 
 const CountDown = () => {
     const weddingDate = `${Config.wYear}-${Config.wMonth}-${Config.wDia}T${Config.wHour}:${Config.wMin}:00`
@@ -54,6 +58,8 @@ const CountDown = () => {
 
     return (
         <>
+        <Zoom>
+
             <div className="flex flex-col pt-12 pb-4">
                
                 <div className=" text-color3 flex justify-around mx-8">
@@ -66,6 +72,7 @@ const CountDown = () => {
                     <div className="pt-4 col-start-4 text-center">segundos</div>
                 </div>
             </div>
+        </Zoom>
         </>
     )
 };

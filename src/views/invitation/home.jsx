@@ -10,11 +10,15 @@ import Gift_Section from "./giftSection";
 import End from "./end";
 
 
+
+
+
 const Home = () => {
     return (
         <>
             <div>
                 <Hero />
+                
                 <FocusPhoto />
                 <CountDown />
                 <Fecha_principal />
@@ -24,6 +28,7 @@ const Home = () => {
                 {/* <PartyPlace /> */}
                 {/* <DressCode /> */}
                 <End />
+                
             </div>
         </>
     )
