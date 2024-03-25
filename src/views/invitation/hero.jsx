@@ -16,7 +16,7 @@ const Hero = () => {
                 <div className="absolute w-screen mt-28">
                 <h1 className="font-fuente1 text-center text-5xl ">¡Nos casamos!</h1>
                 <Fade direction="up">
-                <h1 className="font-fuente3 text-center text-7xl animate__animated animate__slideInDown">Josias y Agustina</h1>
+                <h1 className="font-fuente3 text-center text-7xl animate__animated animate__slideInDown">Antonio y Paula</h1>
                 </Fade>
                 </div>
             </div>

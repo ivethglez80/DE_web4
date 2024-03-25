@@ -38,8 +38,8 @@ const Fecha_principal = () => {
                 </div>
                 <div>
                     <p className="font-fuente3 text-color3 text-7xl text-center">Lugar</p>
-                    <p className="font-fuente4 text-color3 text-xl text-center">Iglesia Sin-Heng.</p>
-                    <p className="font-fuente6 text-color3 text-base text-center mb-6">Mendoza 1660, Belgrano</p>
+                    <p className="font-fuente4 text-color3 text-xl text-center">Lugas perfecto</p>
+                    <p className="font-fuente6 text-color3 text-base text-center mb-6">Calle 12345, ciudad</p>
                 </div>
                 <div>
                 <a href={location} target="_blank" className="flex justify-center">
