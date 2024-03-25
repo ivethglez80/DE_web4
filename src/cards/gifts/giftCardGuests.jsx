@@ -90,7 +90,9 @@ const GiftCard = ({ id, imagen, nombre_art, descripcion, link, disponible }) => 
                             <div className="p-4">
                                 <p className="font-fuente5 text-color1 text-xl">Por favor confirme que usted regala este artículo para que sea eliminado de la lista y no se duplique</p>
                                 <p className="font-fuente5 text-color1 text-xl pt-4">Opcional: si gusta, ingrese su nombre o grupo familiar:</p>
-                                <input type="text" value={invitado} onChange={handleInvitadoChange} placeholder="Nombre" className="bg-zinc-200 text-2xl rounded-xl text-center mt-4 py-2" />
+                                <div className="flex justify-center">
+                                <input type="text" value={invitado} onChange={handleInvitadoChange} placeholder="Nombre" className="bg-zinc-200 text-2xl rounded-xl text-center mt-4" />
+                                </div>
                                 <div className="pt-6 text-center">
                                     <button onClick={toggleDisponible} className="bg-color1 hover:bg-[#A2AD7D] rounded-full py-2 md:w-2/6 font-fuente6 text-white text-base px-4">Confirmo mi regalo</button>
                                 </div>
