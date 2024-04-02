@@ -9,7 +9,7 @@ import { Fade } from "react-awesome-reveal";
 const Hero = () => {
     return (
         <>
-            <div className="relative h-[700px]">
+            <div className="relative min-[300px]:h-[700px] min-[390px]:h-[750px]">
                 <div className="absolute">
                 <img src={web41} alt="foto de los novios" />
                 </div>
