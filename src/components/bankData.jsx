@@ -35,13 +35,15 @@ const CopyTextToClipboard = ({ info, value }) => {
 
 
     return (
+        <div className="flex justify-center">
         <button onClick={() => copyToClipboard(value)}
             className="bg-color3 text-white px-3 rounded-lg text-sm opacity-75"
-        >
+            >
             {
                 toCopy ? `${info} copiado` : `copiar ${info}`
             } 
         </button>
+            </div>
     )
 };
 

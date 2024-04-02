@@ -7,13 +7,13 @@ const End = () => {
     return (
         <>
             <div className="bg-color3 text-white py-12">
-                <Slide direction="down">
+                <Slide direction="down" triggerOnce={true}>
 
                 <div className="mx-12">
                     <p className="font-fuente4 text-base text-center">Por consiguiente, ya no son dos, sino una sola carne. Por tanto, lo que Dios ha unido, ningún hombre lo separe. Mateo 16:9</p>
                 </div>
                 </Slide>
-                <Slide direction="up">
+                <Slide direction="up" triggerOnce={true}>
 
                 <div className="pt-6">
                     <p className="font-fuente3 text-7xl text-center">¡Te esperamos!</p>

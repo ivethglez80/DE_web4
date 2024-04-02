@@ -14,7 +14,7 @@ const Focus_photo = () => {
                 Como llama divina es el fuego ardiente del amor. Ni las muchas aguas pueden apagarlo, ni los ríos pueden extinguirlo.
                 </p>
             </div>
-        <Fade cascade delay={200}>
+        <Fade cascade delay={200} triggerOnce={true}>
             <div className="py-6">
                 <p className="font-fuente3 text-color3 text-center text-5xl">
                 Cantares 8:6-7

@@ -16,7 +16,7 @@ const Fecha_principal = () => {
     return (
         <>
             <div className="border border-color3 rounded-[65px] mx-2 mt-16 pt-24 pb-24">
-                <Zoom delay={100}>
+                <Zoom delay={100} triggerOnce={true}>
 
                 <div className="flex justify-center pb-4">
                     <img src={month} alt="icono calendario" className="w-[60px]"/>

@@ -20,7 +20,7 @@ const Gift_Section = () => {
     return (
         <>
         <div className="border border-color3 rounded-t-[65px] pb-32 pt-12 mx-2">
-            <Zoom>
+            <Zoom triggerOnce={true}>
             <div className="flex justify-center py-4 ">
                 <img src={gift} alt="gift icon" className="w-[60px]" />
             </div>
@@ -46,7 +46,7 @@ const Gift_Section = () => {
                 {showCard && <GiftOptionsCard closeCard={toggleCard} />}
             </div>
 
-            <Zoom delay={200}>
+            <Zoom delay={200} triggerOnce={true}>
             <div className="flex justify-center pt-24">
                 <img src={phone} alt="icon phone" className="w-[60px]"/>
             </div>

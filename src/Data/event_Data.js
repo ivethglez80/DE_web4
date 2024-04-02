@@ -18,9 +18,9 @@ const Config = {
     wLINK: "https://maps.app.goo.gl/ZWY5v64rgp8Kmjpq6",
     wppLink: "https://shorturl.at/cfjD3",
     dressCode: "Elegante",
-    banco: "_nombre de banco",
-    alias : "_alias",
-    cbu: "_123456",
+    banco: "BBVA Frances",
+    alias : "JOSIAS.EZE.LEA",
+    cbu: "0170331140000049162345",
     mobile: "+5491134318192",
     mensaje: "Hola futuro matrimonio Leandi, gracias por la invitacion!, estamos felices de confirmar nuestra asistencia"
 };

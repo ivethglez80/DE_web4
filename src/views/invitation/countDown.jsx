@@ -58,7 +58,7 @@ const CountDown = () => {
 
     return (
         <>
-        <Zoom>
+        <Zoom triggerOnce={true}>
 
             <div className="flex flex-col pt-12 pb-4">
                

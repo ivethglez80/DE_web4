@@ -10,7 +10,7 @@ const PhotoCarrousel = () => {
     return (
         <>
             <div>
-                <Fade cascade>
+                <Fade cascade triggerOnce={true}>
                 <div className="my-8">
                     <p className="font-fuente3 text-color3 text-6xl text-center">Nuestro para siempre</p>
                 </div>

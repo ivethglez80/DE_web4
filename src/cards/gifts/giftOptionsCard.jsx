@@ -23,9 +23,11 @@ const GiftOptionsCard = ({ closeCard }) => {
                     <div className="pt-6">
                         <p className="font-fuente6 text-center pt-6 text-color3 text-xl">Lista de regalos</p>
                         <div className="flex justify-center pt-4 pb-6">
+                            <a href="https://docs.google.com/spreadsheets/d/1Xt51DJYB4SMYpaDS_O0MtGxZzfkEuV6JKula9DW8VmY/edit#gid=0" target="_blank">
                             <button className="bg-color3 text-white px-6 rounded-lg text-sm opacity-75">
-                                <Link to="/lista-de-regalos">Ver</Link>
+                                Ver
                             </button>
+                            </a>
                         </div>
                     </div>
                 </div>
